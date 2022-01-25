@@ -62,9 +62,9 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }} #test6
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull david1870/gates
+          sudo docker pull david1870/gates:v2.11.1989
           #остановка всех контейнеров
-          sudo docker stop d5c3ff4a8936 $(sudo docker ps -a -q)
+          #sudo docker stop d5c3ff4a8936 $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 david1870/gates
   send_message:
     runs-on: ubuntu-latest
